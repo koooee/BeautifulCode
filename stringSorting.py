@@ -1,7 +1,20 @@
 # stringSorting.py -- sort an input string based on an ordering string.
 # Programmer: Nick Kolegraff
 
-# This was some very ugly code I found in my Repos...looks like a C programmer trying to write python
+
+##############
+## NEW CODE ##
+##############
+
+# Rethinking with an new understanding of beautiful code..
+def csort_concise(input_string, order_string):
+    max_order_key = max(len(input_string), len(order_string))
+    order_dict = dict(zip(order_string, range(0,len(order_string))))
+    return ''.join(sorted(list(input_string), key=lambda x: order_dict.get(x, max_order_key)))
+
+
+# This was some very ugly code I found in my Repos...I wanted to try and attempt to make it beautiful
+# after reading up on the concept
 def csort(input_string, order_string):
    # one greater than the largest possible rank an element can have.
    magic = max(len(input_string), len(order_string)) + 1
@@ -24,10 +37,3 @@ def csort(input_string, order_string):
            output_buf.append(item)
 
    return ''.join([item for item in output_buf if item != 0])
-
-
-# Rethinking with an new understanding of beautiful code..
-def csort_concise(input_string, order_string):
-    max_order_key = max(len(input_string), len(order_string))
-    order_dict = dict(zip(order_string, range(0,len(order_string))))
-    return ''.join(sorted(list(input_string), key=lambda x: order_dict.get(x, max_order_key)))
