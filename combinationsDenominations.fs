@@ -55,9 +55,9 @@ System.Environment.Exit(1);;
 // I need to explore this more because there are still some details that are unclear, totally jazzed about this though.  I'm sold.
 
 //Possible Issue: I'd suspect summing on floats that have been divided with give some sort of precision error
-//                the exact nature of how it effects the code is unclear to me, values with be slightly off
-//                it is also subject to have some inputs slip though with bad denoms since I am doing boolean
-//                comparison on floats, I have yet to find such a case.
+//                the exact nature of how it effects the code is unclear to me, values will be slightly off
+//                for large numbers. it is also subject to have some inputs slip though with bad denoms since
+//                I am doing boolean comparison on floats, I have yet to find such a case.
 
 //TODO: prompt the user for denom input
 //TODO: check for large numbers and throw an exception if they don't have the resources to compute it
