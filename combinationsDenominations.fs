@@ -49,6 +49,7 @@ cd 1.23 denoms;;
 let input = get_input denoms;;
 printfn "Total Combinations: %f" (List.sum (cd input denoms));;
 System.Environment.Exit(1);;
+
 // The tail recursive optimizations blow my mind -- I wish I would have found functional programming sooner. 
 // Seems very natural to port this stuff onto GPUs as a function with many indepandant tail recursive calls could be mapped to a kernel easily (in theory)
 // I need to explore this more because there are still some details that are unclear, totally jazzed about this though.  I'm sold.

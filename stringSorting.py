@@ -13,7 +13,7 @@ def csort_concise(input_string, order_string):
     return ''.join(sorted(list(input_string), key=lambda x: order_dict.get(x, max_order_key)))
 
 
-# This was some very ugly code I found in my Repos...I wanted to try and attempt to make it beautiful
+# This was some very ugly (and broken) code I found in my Repos...I wanted to try and attempt to make it beautiful
 # after reading up on the concept
 def csort(input_string, order_string):
    # one greater than the largest possible rank an element can have.
@@ -37,3 +37,9 @@ def csort(input_string, order_string):
            output_buf.append(item)
 
    return ''.join([item for item in output_buf if item != 0])
+
+
+# some quick tests
+print(csort_concise("bcadefg", "gfcvdca") == csort("bcadefg", "gfcvdca"))
+print(csort_concise("gfdsa", "asdfg") == "asdfg")
+print(csort_concise("abcdef", "dbfe") == "dbfeac")
